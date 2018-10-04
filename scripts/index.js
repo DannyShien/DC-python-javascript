@@ -82,3 +82,5 @@ if (theDay === 0) { //And curly braces !
 // And does not require a semi-colon after the curley braces. 
 
 console.log(dayName);
+
+// comment
