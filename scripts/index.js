@@ -136,19 +136,62 @@ let translation = ``;
 for (let letter of textToTranslate) {
     //console.log(letter);
     // console.log(lettersToConvert.indexOf(letter) !== -1) {
+    let index = lettersToConvert.indexOf(letter);
     
     //Check to see if the current letter is in `letterToConvert`
-    let index = lettersToConvert.indexOf(letter);
+    if (index !== -1) {
         //if so, grab the index
-        
+
         //use the index to grab the corresonding item from `numbers`
         translation = translation + number[index];
     }else {
         //else, just use the origianl letter
         translation = translation + letter; 
     }
-
 }
 
-
 console.log(translation); 
+
+// ===== ===== ===== OBJECTS ===== =====
+const text = `you wish you were batman`;
+
+//'objects in JavaScript
+// is bassically a "dictionary" in Python. 
+
+//Backticks does not work when declaring 'keys' but okay as 'values' 
+const lettersToNumbers = {
+    'A': '4', 
+    'E': '3',
+    'G': '6',
+    'I': '1', 
+    'O': '0', 
+    'S': '5', 
+    'T': '7' 
+};
+
+const textToTranslate = text.toUpperCase();
+let translation = ``;
+
+// Let's loop through the strings to translate
+for (let letter of textToTranslate) {
+    // If the letter is a key in out "dictionary" 
+    const replacement = lettersToNumbers[letter];
+
+    // and its value is not 'falsey': false, null, undefined, 0, '', NAN
+    if (lettersToNumbers[letter]) {
+        console.log(`${letter} is ${lettersToNumbers[letter]}`);
+        translation = translation + lettersToNumbers[letter]
+    } else {
+        console.log(`${letter} stays the same`);
+        translation = translation + letter;
+    }
+    // use the translation.
+    // Otherwise, just use the original letter. 
+    
+}
+    
+    
+    
+    
+
+
