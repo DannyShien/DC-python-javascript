@@ -20,7 +20,7 @@ let userName =prompt(promptText);
 
 // ===== ===== ===== String interpolation ===== =====
 //1. Replace quotes with backticks
-//2. remose the + signs
+//2. remove the + signs
 //3. Wrap your variables in ${}
 const greeting = `Hello, ${userName}!`;
 console.log(greeting);
@@ -83,4 +83,72 @@ if (theDay === 0) { //And curly braces !
 
 console.log(dayName);
 
-// comment
+// ===== ===== ===== tip calculator ===== =====
+
+const LEVEL_GOOD = 'good'; 
+const LEVEL_FAIR = 'fair'; 
+const LEVEL_BAD = 'bad'; 
+
+const TIP_GOOD = 0.2; 
+const TIP_FARI = 0.15; 
+const TIP_BAD = 0.1; 
+
+// Processing ===========
+const totalBill = parseFloart(`100`); 
+const levelOfService = 'good'; 
+
+
+let tip = 0.0; 
+
+if (levelOfService === LEVEL_GOOD) {
+    tip = totalBill * TIP_GOOD; 
+} else if (levelOfService === LEVEL_FAIR) {
+    tip = totalBill *TIP_FAIR; 
+} else if (levelOfService === LEVEL_BAD) {
+    tip = totalBill * TIP_BAD;
+} else {
+    console.log(`Invalid. They can't be that bad`)
+}
+
+// Result ==============
+console.log(`Tip amount: ${tip.toFixed(2)}`); 
+console.log(`Total amount: ${(totalBill + tip).toFixed(2)}`);
+
+// ===== ===== ===== LOOPS ===== =====
+
+for (let count = 0; count < 10; count ++) {
+    console.log(count);
+}
+
+// ===== ===== ===== ARRAYS ===== =====
+// ===== ===== LEETSPEAK ===== =====
+const text = `you wish you were batman`; 
+
+const lettersToConvert = ['A', 'E', 'G', 'I', 'O', 'S', 'T'];
+const numbers          = [4,    3,   6,   1,   0,   5,   7]; 
+
+const textToTranslate = text.toUpperCase(); 
+let translation = ``;
+ //ES6 stlye of array iteration
+ //Basically the equicalent of python's for loop
+ //for (let lettter of text.toUpperCaes())
+
+for (let letter of textToTranslate) {
+    //console.log(letter);
+    // console.log(lettersToConvert.indexOf(letter) !== -1) {
+    
+    //Check to see if the current letter is in `letterToConvert`
+    let index = lettersToConvert.indexOf(letter);
+        //if so, grab the index
+        
+        //use the index to grab the corresonding item from `numbers`
+        translation = translation + number[index];
+    }else {
+        //else, just use the origianl letter
+        translation = translation + letter; 
+    }
+
+}
+
+
+console.log(translation); 
